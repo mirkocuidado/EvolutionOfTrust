@@ -1,0 +1,7 @@
+11,1,0,0,15
+Avenger,5
+Copycat,5
+Forgiver,5
+Goody,5
+Stinger,5
+AdrianJocovic,5
