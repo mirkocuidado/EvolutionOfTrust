@@ -1,4 +1,4 @@
-10,1,0,0,5
+10,1,0,0,10
 Avenger,5
 Copycat,5
 Forgiver,5

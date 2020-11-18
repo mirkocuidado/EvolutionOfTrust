@@ -28,7 +28,7 @@ public class Winner extends Player {
 		 
 		else if(whoIsMyOponent == 'C') {
 			if(flagCopyCat == 0) { flagCopyCat = 1; return Move.PUT2COINS; }
-			else { flagCopyCat = 0; return Move.PUT1COIN; }
+			else { flagCopyCat = 0; return Move.DONTPUTCOINS; }
 		}
 		
 		/*
@@ -38,20 +38,20 @@ public class Winner extends Player {
 			else { flagCopyCat = 0; return Move.DONTPUTCOINS; }
 		}*/
 		
-		/* 2->0->2->0->2->0->2->0->2->0->2->0->2->0
+		/* 2->0->2->0->2->0->2->0->2->0->2->0->2->0*/
 		 
 		  	else if(whoIsMyOponent =='F') {
 			if(flagForgiver == 0) { flagForgiver = 1; return Move.PUT2COINS; }
 			else { flagForgiver = 0; return Move.DONTPUTCOINS; }
-		}*/
+		}
 		
 		// 1->2->0->1->2->0->1->2->0->1->2->0->1->2->0->1->2->0
-		
+		/*
 		else if(whoIsMyOponent =='F') {
 			if(flagForgiver == 0) { flagForgiver = 1; return Move.PUT1COIN; }
 			else if(flagForgiver == 1) { flagForgiver = 2; return Move.PUT2COINS; }
 			else { flagForgiver = 0; return Move.DONTPUTCOINS; }
-		}
+		}*/
 		/*else if(whoIsMyOponent =='F') {
 			if(flagForgiver == 0) { flagForgiver = 1; return Move.DONTPUTCOINS; }
 			else if(flagForgiver == 1) { flagForgiver = 2; return Move.PUT2COINS; }

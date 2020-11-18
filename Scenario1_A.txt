@@ -1,7 +1,7 @@
-11,1,0,0,15
+10,1,0,0,30
+Aaa,5
 Avenger,5
 Copycat,5
 Forgiver,5
 Goody,5
 Stinger,5
-AdrianJocovic,5

@@ -11,6 +11,9 @@ public class AdrianJocovic extends Player {
 		private int flagCopyCat = 0;
 		private int flagForgiver = 0;
 		
+		private int dontForgiveCopy = 0;
+		private int dontForgiveForgive = 0;
+		
 		@Override
 		public Move getNextMove() {
 			if(counter==0) { 
@@ -22,8 +25,9 @@ public class AdrianJocovic extends Player {
 			else if(whoIsMyOponent == 'A') return Move.DONTPUTCOINS;
 			else if(whoIsMyOponent == 'W') return Move.PUT2COINS;
 			else if(whoIsMyOponent == 'C') {
-				if(flagForgiver == 0) { flagForgiver = 1; return Move.PUT2COINS; }
-				else if(flagForgiver == 1) { flagForgiver = 0; return Move.DONTPUTCOINS; }
+				if(flagCopyCat == 0) { flagCopyCat = 1; return Move.PUT2COINS; }
+				else if(flagCopyCat == 1) { flagCopyCat = 0; return Move.DONTPUTCOINS; }
+				
 			}
 			else if(whoIsMyOponent =='F') {
 				if(flagForgiver == 0) { flagForgiver = 1; return Move.PUT2COINS; }
@@ -88,8 +92,6 @@ public class AdrianJocovic extends Player {
 				
 				
 				
-				
-				
 				else if(move1 == Player.Move.PUT1COIN && counter==2 && potential == 1) { // Copycat / Forgiver / ME
 					counter++;
 					return Move.PUT2COINS;
@@ -111,7 +113,7 @@ public class AdrianJocovic extends Player {
 				
 				
 			}
-			return Move.PUT2COINS; // izmeni
+			return Move.DONTPUTCOINS; // izmeni
 		}
 		
 		public void resetPlayerState() {
@@ -120,6 +122,8 @@ public class AdrianJocovic extends Player {
 			potential = -1;
 			flagCopyCat = 0;
 			flagForgiver = 0;
+			dontForgiveCopy = 0;
+			dontForgiveForgive = 0;
 		}
 
 	}
