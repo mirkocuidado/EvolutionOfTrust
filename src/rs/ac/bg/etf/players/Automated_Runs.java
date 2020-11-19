@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 import rs.ac.bg.etf.engine.Game;
 
-public class Test {
+public class Automated_Runs {
 	private static final String input= "C:/Users/38164/OneDrive/Desktop/EvolutionOfTrust/project/Scenario1_A.txt"; 
 	private static final String output= "C:/Users/38164/OneDrive/Desktop/EvolutionOfTrust/project/out2.txt";
 	private static String[] argsMain= {input, output};
@@ -41,11 +41,11 @@ public class Test {
 		for(String s:args) {
 			System.out.println(s);
 		}
-	int max=1000; //ovde menjas broj pokretanja programa
+	int max=1000; // number of runs
 	int cnt=0;
 	for(int i=0;i<max;i++) {
 	Game.main(argsMain);
-	if(getWinner().contains("ElGamalJunior")) cnt++; //ovde stavljas ime tvog igraca
+	if(getWinner().contains("ElGamalJunior")) cnt++; //your player's name
 	}
 		System.out.println(cnt+"/"+max);
 
