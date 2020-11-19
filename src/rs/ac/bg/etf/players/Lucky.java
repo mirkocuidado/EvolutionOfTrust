@@ -8,6 +8,7 @@ public class Lucky extends Player {
 		
 		private int potential = -1;
 		private int flagForgiver = 0;
+		private int flagCopy = 0;
 		
 		private int error = 0;
 		
@@ -34,15 +35,15 @@ public class Lucky extends Player {
 			else if(whoIsMyOponent == 'G') return Move.DONTPUTCOINS;
 			else if(whoIsMyOponent == 'A') return Move.DONTPUTCOINS;
 			else if(whoIsMyOponent == 'W') return Move.PUT2COINS;
-			else if(whoIsMyOponent == 'C') return Move.DONTPUTCOINS;
+			else if(whoIsMyOponent == 'C') return Move.DONTPUTCOINS; 
 			else if(whoIsMyOponent =='F') {
 				if(flagForgiver == 0) { 
 					flagForgiver = 1; 
-					return Move.DONTPUTCOINS; 
+					return Move.PUT2COINS; 
 				}
 				else if(flagForgiver == 1) { 
 					flagForgiver = 0; 
-					return Move.PUT2COINS; 
+					return Move.DONTPUTCOINS; 
 				}
 			}
 			
@@ -93,7 +94,6 @@ public class Lucky extends Player {
 					return Move.DONTPUTCOINS;
 				}
 				
-
 				/********** ERROR PROCESS IN STEP COPYCAT OR FORGIVER OR MYSELF **********/
 				else if(move1 == Player.Move.DONTPUTCOINS && counter == 2 && potential == 1) {
 					counter++;
@@ -123,16 +123,21 @@ public class Lucky extends Player {
 					whoIsMyOponent = 'F';
 					return Move.PUT2COINS;
 				}
+				/********** END ERROR PROCESS IN STEP COPYCAT OR FORGIVER OR MYSELF **********/
 				
 				/********** COPYCAT OR FORGIVER **********/
-				else if(move1 == Player.Move.PUT1COIN && counter == 3 && potential == 1 && error == 0) {
+				else if(counter == 3 && potential == 1 && error == 0 && move1 == Player.Move.PUT2COINS) {
 					counter++;
-					whoIsMyOponent = 'F';
 					return Move.PUT2COINS;
 				}
-				else if(move1 == Player.Move.DONTPUTCOINS && counter== 3 && potential == 1 && error == 0) {
+				else if(counter== 4 && potential == 1 && error == 0 && move1 == Player.Move.DONTPUTCOINS) {
 					counter++;
 					whoIsMyOponent = 'C';
+					return Move.DONTPUTCOINS;
+				}
+				else if(counter==4 && potential == 1 && error == 0 && move1 == Player.Move.PUT2COINS) {
+					counter++;
+					whoIsMyOponent = 'F';
 					return Move.DONTPUTCOINS;
 				}
 			}
@@ -146,6 +151,7 @@ public class Lucky extends Player {
 			whoIsMyOponent = '?';
 			potential = -1;
 			flagForgiver = 0;
+			flagCopy = 0;
 			error = 0;
 			counterOfBadness = 0;
 		}
