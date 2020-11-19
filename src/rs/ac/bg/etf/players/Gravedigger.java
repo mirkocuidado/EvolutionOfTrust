@@ -1,6 +1,6 @@
 package rs.ac.bg.etf.players;
 
-public class Aaa extends Player {
+public class Gravedigger extends Player {
 
 		private int counter = 0;
 		
@@ -163,31 +163,6 @@ public class Aaa extends Player {
 					whoIsMyOponent = 'A';
 					return Move.DONTPUTCOINS; 
 				}
-				
-				
-				
-				
-				
-				
-				else if(move1 == Player.Move.PUT1COIN && counter==2 && potential == 1 && error == 0) { // Copycat / Forgiver / ME
-					counter++;
-					return Move.PUT2COINS;
-				}
-				
-				else if(move1 == Player.Move.PUT2COINS && counter==2 && potential == 1 && error == 0) { // Copycat / ME
-					counter++;
-					whoIsMyOponent = 'C';
-					return Move.PUT2COINS;
-				}
-				
-				
-				else if(move1 == Player.Move.PUT1COIN && counter==2 && potential == 1 && error == 0) { // Forgiver / ME
-					counter++;
-					whoIsMyOponent = 'F';
-					return Move.PUT2COINS;
-				}
-				
-				
 				
 			}
 			return Move.DONTPUTCOINS; // izmeni

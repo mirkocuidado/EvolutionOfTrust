@@ -1,5 +1,5 @@
 10,1,0,0,30
-Aaa,5
+Lucky,5
 Avenger,5
 Copycat,5
 Forgiver,5
